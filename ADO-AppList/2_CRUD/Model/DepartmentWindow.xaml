@@ -1,0 +1,74 @@
+﻿<Window x:Class="ADO_AppList.DepartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADO_AppList"
+        mc:Ignorable="d"
+        Title="DepartmentWindow" 
+        Height="350" 
+        Width="550"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3.5*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Отдел (Департамент)" 
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               FontSize="20"
+               HorizontalContentAlignment="Center"/>
+        <Label Content="Идентификатор"
+               Grid.Row="1"
+               Grid.Column="0"
+               FontSize="20" />
+        <Label Content="Название"
+               Grid.Row="2"
+               Grid.Column="0"
+               FontSize="20" />
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2">
+            <Button x:Name="Save"
+                    Content="Сохранить"
+                    Click="Save_Click"
+                    FontSize="20"
+                    Width="120"
+                    Margin="30, 20" />
+            <Button x:Name="Delete"
+                    Content="Удалить"
+                    Click="Delete_Click"
+                    FontSize="20"
+                    Width="120"
+                    Margin="30, 20" />
+            <Button x:Name="Close"
+                    Click="Close_Click"
+                    Content="Закрыть"
+                    FontSize="20"
+                    Width="120"
+                    Margin="30, 20" />
+        </StackPanel>
+        <TextBlock x:Name="DepartmentID"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   FontSize="16"
+                   VerticalAlignment="Center" />
+        <TextBox x:Name="DepartmentName"
+                 TextChanged="DepartmentName_TextChanged"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 FontSize="16"
+                 VerticalAlignment="Center" />
+    </Grid>
+</Window>
