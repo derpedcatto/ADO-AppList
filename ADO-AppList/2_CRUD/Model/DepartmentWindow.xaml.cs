@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ADO_AppList
 {
@@ -19,14 +9,25 @@ namespace ADO_AppList
     /// </summary>
     public partial class DepartmentWindow : Window
     {
+        #region Variables
+
         public Entities.Department Department { get; set; }
 
+        #endregion
 
-        public DepartmentWindow()
+
+        #region Constructor
+
+        public DepartmentWindow(Entities.Department department)
         {
             InitializeComponent();
+            Department = department;
         }
 
+        #endregion
+
+
+        #region Window events
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -60,8 +61,8 @@ namespace ADO_AppList
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBoxResult.Yes ==  MessageBox.Show("Вы уверены?", "Удаление данных",
-                                         MessageBoxButton.YesNo, MessageBoxImage.Question))
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены?", "Удаление данных",
+                                        MessageBoxButton.YesNo, MessageBoxImage.Question))
             {
                 Department.Name = String.Empty;
                 DialogResult = true;
@@ -73,5 +74,7 @@ namespace ADO_AppList
         {
             Save.IsEnabled = DepartmentName.Text.Trim() == String.Empty ? false : true;
         }
+
+        #endregion
     }
 }

@@ -1,10 +1,10 @@
-﻿<Window x:Class="ADO_AppList.DepartmentWindow"
+﻿<Window x:Class="ADO_AppList._2_CRUD.Model.ProductsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:ADO_AppList"
+        xmlns:local="clr-namespace:ADO_AppList._2_CRUD.Model"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="Department Editor"
+        Title="Product Editor"
         Width="550"
         Height="auto"
         Loaded="Window_Loaded"
@@ -22,13 +22,14 @@
 
         <!--  Header Area  -->
         <Label Grid.Row="0"
-               Content="Отдел (Департамент)"
+               Content="Продукт"
                Style="{StaticResource HeaderLabel}"
                />
 
         <!--  Textbox Area  -->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
@@ -47,17 +48,28 @@
                    Content="Название"
                    Style="{StaticResource EditWindowNameLabel}"
                    />
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Content="Цена"
+                   Style="{StaticResource EditWindowNameLabel}"
+                   />
 
-            <TextBlock x:Name="DepartmentID"
+            <TextBlock x:Name="ProductID"
                        Grid.Row="0"
                        Grid.Column="1"
                        Style="{StaticResource EditWindowTextblock}"
                        />
-            <TextBox x:Name="DepartmentName"
+            <TextBox x:Name="ProductName"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Style="{StaticResource EditWindowTextbox}"
+                     TextChanged="ProductName_TextChanged"
+                     />
+            <TextBox x:Name="ProductPrice"
                      Grid.Row="2"
                      Grid.Column="1"
                      Style="{StaticResource EditWindowTextbox}"
-                     TextChanged="DepartmentName_TextChanged"
+                     TextChanged="ProductPrice_TextChanged"
                      />
         </Grid>
 
