@@ -76,7 +76,7 @@
                     Content="CRUD"
                     />
 
-            <Button Background="Green"
+            <Button Background="CornflowerBlue"
                     Click="EFButton_Click"
                     Content="Entity Framework"
                     />
